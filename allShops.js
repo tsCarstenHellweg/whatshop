@@ -1,4 +1,6 @@
-var appinfo = {    
+// 
+function ts_whatshop_getAllShops() {
+    var appinfo =  {    
 /* ********************* TRUSTEDSHOPS-TrustBadge/Card ******************************** */
     'Trustbadge ohne Variante': {
         fullname: 'Trustbadge ohne Variante',
@@ -8,7 +10,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
@@ -23,7 +25,7 @@ var appinfo = {
         cat: 0,
         test_script: function() 
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
@@ -38,7 +40,7 @@ var appinfo = {
         cat: 0,
         test_script: function() 
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
@@ -53,7 +55,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
@@ -68,7 +70,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
@@ -123,7 +125,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
@@ -138,7 +140,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
@@ -153,11 +155,11 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
-            if( _tsConfig.responsive === undefined)
+            if( typeof _tsConfig.responsive  === 'undefined' ) 
             {          
                return false;
             }
@@ -176,11 +178,11 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
-            if( _tsConfig.responsive === undefined)
+            if( typeof _tsConfig.responsive  === 'undefined' ) 
             {
                return false;
             }
@@ -199,11 +201,11 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
-            if( _tsConfig.responsive === undefined)
+            if( typeof _tsConfig.responsive  === 'undefined' ) 
             {
                return false;
             }
@@ -223,11 +225,11 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
-            if( _tsConfig.responsive === undefined)
+            if( typeof _tsConfig.responsive  === 'undefined' ) 
             {
                return false;
             }
@@ -242,11 +244,11 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
-            if( _tsConfig.disableTrustbadge === undefined)
+            if( typeof _tsConfig.disableTrustbadge === 'undefined' ) 
             {
                return false;
             }
@@ -261,11 +263,11 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsConfig === undefined ) 
+            if( typeof _tsConfig === 'undefined' ) 
             {
                 return false;
             }
-            if( _tsConfig.disableResponsive === undefined )
+            if( typeof _tsConfig.disableResponsive === 'undefined' ) 
             {
                 return false;
             }           
@@ -288,7 +290,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsRatingConfig !== undefined )
+            if( typeof _tsRatingConfig !== 'undefined' ) 
             {            
                 var stickerVar = _tsRatingConfig.variant;
                 if(stickerVar == "")
@@ -307,7 +309,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsRatingConfig !== undefined )
+            if( typeof _tsRatingConfig !== 'undefined' ) 
             {            
                 var stickerVar = _tsRatingConfig.variant;
                 return stickerVar == "skyscraper_vertical";
@@ -323,7 +325,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsRatingConfig !== undefined )
+            if( typeof _tsRatingConfig !== 'undefined' ) 
             {            
                 var stickerVar = _tsRatingConfig.variant;
                 return stickerVar == "skyscraper_horizontal";
@@ -339,7 +341,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsRatingConfig !== undefined )
+            if( typeof _tsRatingConfig !== 'undefined' ) 
             {            
                 var stickerVar = _tsRatingConfig.variant;
                 if( stickerVal !== undefined )
@@ -375,7 +377,7 @@ var appinfo = {
         test_regexp: /trustedshops.com\/reviews\/tsSticker\/tsSticker\.js/ && /variant\:\s\'testimonial\'/,
         test_script: function()
         {
-            if( _tsRatingConfig !== undefined )
+            if( typeof _tsRatingConfig !== 'undefined' ) 
             {            
             
                 var stickerVar = _tsRatingConfig.variant;
@@ -429,7 +431,8 @@ var appinfo = {
         test_script: function()
         {
             var EIP = document.querySelector('link[id="trustbadgeStyleSheettbExitIntent"]');
-            if (EIP !== null)
+            // if( typeof EIP !== 'undefined' )
+            if( EIP !== null )
             {
                 return true;
             }
@@ -448,9 +451,12 @@ var appinfo = {
         {
             if (document.querySelector('script[type="application/ld+json"]')!== null)
             {
-                if (jsonLD !== undefined)
+                if( typeof jsonLD !== 'undefined' )
                 {
-                    if ((jsonLD['@type'] == "Organization") && (jsonLD['@type'] == "AggregateRating") )
+                    if( 
+                        ( jsonLD['@type'] == "Organization" ) 
+                        && ( jsonLD['@type'] == "AggregateRating" ) 
+                    )
                     {              
                         return true;
                     }
@@ -470,7 +476,7 @@ var appinfo = {
             if (document.querySelector('script[type="application/ld+json"]')!== null)
             {
                 var jsonLD = JSON.parse(document.querySelector('script[type="application/ld+json"]').innerHTML);
-                if (jsonLD !== undefined)
+                if( typeof jsonLD !== 'undefined' )
                 {
                     if ( 
                             (jsonLD['@type'] == "LocalBusiness") 
@@ -513,7 +519,7 @@ var appinfo = {
     
                 var micro_ratVal = document.querySelector('div[itemprop=ratingValue]');
                 if(
-                        (micro_Orga !== undefined) 
+                           (micro_Orga !== undefined) 
                         && (tsLink !== undefined) 
                         && (micro_ratVal !== undefined)
                 )
@@ -539,7 +545,7 @@ var appinfo = {
                 var micro_local = document.querySelector('div[itemtype="http://schema.org/LocalBusiness"]');   
                 var micro_ratVal = document.querySelector('div[itemprop=ratingValue]');
                 if(
-                        (micro_local !== undefined) 
+                           (micro_local !== undefined) 
                         && (tsLink !== undefined) 
                         && (micro_ratVal !== undefined)
                 )
@@ -584,7 +590,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsProductReviewsConfig === undefined )
+            if( typeof _tsProductReviewsConfig === 'undefined' ) 
             {            
                 return false;
             }
@@ -617,7 +623,7 @@ var appinfo = {
         cat: 0,
         test_script: function()
         {
-            if( _tsRatingConfig !== undefined )
+            if( typeof _tsRatingConfig !== 'undefined' ) 
             {                         
                 var srRSConfi = _tsRatingConfig.richSnippets;
 
@@ -1400,8 +1406,13 @@ var appinfo = {
         cat: 3,
         test_version: function()
         {
-            vers  = doc.getElementsByTagName("html")[0].getAttribute("data-jv");            
-            if (vers  !== undefined )
+            var temp = document.getElementsByTagName("html");
+            if( typeof temp[ 0 ] === 'undefined' )
+            {
+                return "";
+            }
+            vers  = temp[ 0 ].getAttribute("data-jv");            
+            if( typeof vers !== 'undefined' )
             {
                 return vers ;
             }
@@ -1416,8 +1427,13 @@ var appinfo = {
         cat: 3,
         test_version: function()
         {
-            vers  = doc.getElementsByTagName("html")[0].getAttribute("data-j2v");
-            if( vers  !== undefined )
+            var temp = document.getElementsByTagName("html");
+            if( typeof temp[ 0 ] === 'undefined' )
+            {
+                return "";
+            }
+            vers  = temp[ 0 ].getAttribute("data-jv");            
+            if( typeof vers !== 'undefined' )
             {
                 return vers ;
             }
@@ -1655,7 +1671,8 @@ var appinfo = {
         test_regexp: /(<script [^>]+drupal\.js|jQuery\.extend\(Drupal\.settings, \{|Drupal\.extend\(\{ settings: \{|<link[^>]+sites\/(default|all)\/themes\/|<style[^>]+sites\/(default|all)\/(themes|modules)\/)/i,
         test_script: function() 
         {
-            return window.Drupal !== null;
+            return ( typeof window.DRUPAL !== 'undefined' );
+            // return window.Drupal !== null;
         }
     },
     'Shoplo': {
@@ -1778,5 +1795,6 @@ var appinfo = {
         priority: 5,
         cat: 1
     }
-    
 };
+return appinfo;
+}

@@ -11,29 +11,33 @@
  **/
 
 (function(){
-	var head = document.getElementsByTagName('head')[0];
+    var head = document.getElementsByTagName('head')[0];
 
-	if (head) {
-		var script = document.createElement('script');
-		script.type = 'text/javascript';
-		script.src = chrome.extension.getURL('detector.js');
+    if (head) {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = chrome.extension.getURL('allShops.js');
+        head.appendChild(script);
 
-		var meta = document.createElement('meta');
-		meta.name = 'whatshop';
-		meta.id = 'whatshop_meta';
-		head.appendChild(meta);
-		head.appendChild(script);
-	}
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = chrome.extension.getURL('allTests.js');
+        head.appendChild(script);
 
-	meta.addEventListener('ready', function(){
+        var meta = document.createElement('meta');
+        meta.name = 'whatshop';
+        meta.id = 'whatshop_meta';
+        head.appendChild(meta);                		
+    }
 
-		if (meta) {
-			var apps = JSON.parse(meta.content)
+    meta.addEventListener('ready', function(){
+        if (meta) {
+                var apps = JSON.parse(meta.content)
 
-			if (Object.keys(apps).length > 0) {
-				//alert(Object.keys(apps).length);
-				chrome.extension.sendRequest({msg: "result", apps: apps});
-			}
-		}
-	});
+                if (Object.keys(apps).length > 0) {
+                        //alert(Object.keys(apps).length);
+                        chrome.extension.sendRequest({msg: "result", apps: apps});
+                }
+        }
+    });
 })();

@@ -1,6 +1,7 @@
 {
    "manifest_version": 2,
-   "background": {
+
+    "background": {
     "scripts": ["background.js"],
 	"persistant": false
 	},
@@ -25,9 +26,11 @@
       "default_popup": "popup.html"
    },
    "content_security_policy": "script-src 'self'; object-src 'self'",
-   "web_accessible_resources": [
-		"detector.js",
-		"common.js"
+   "web_accessible_resources": [        
+        "allShops.js",
+        "allTests.js",
+        "popup.js",
+        "common.js" 
    ],
    "permissions": [ "cookies", "tabs", "http://*/*", "https://*/*" ],
    "version": "0.8.3.0"

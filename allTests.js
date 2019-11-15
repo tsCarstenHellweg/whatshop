@@ -24,13 +24,13 @@ function runAllTests()
         {
             metaAuthor = meta;
         }
-        console.log( meta );
+//        console.log( meta );
     }
-    var text    = doc.documentElement.outerHTML;
+    var text    = document.documentElement.outerHTML;
     var scripts = doc.getElementsByTagName("script");
     
       
-    
+    var appinfo = ts_whatshop_getAllShops();
     // -------------- the tests ----------------------------------------------------
     for( var shopname in appinfo )
     {
@@ -130,8 +130,8 @@ function runAllTests()
     if( _apps[/OpenCart-Version/]                 !== undefined ) delete _apps[/Opencart/];
     if( _apps[/OpenCart-Version/]                 !== undefined ) delete _apps[/OpenCart/];
     if( _apps[/OpenCart-Version/] == /\s*(.*)/ )                  delete _apps[/Opencart/];
-    if( _apps[ 'OpenCart-Journal-Version' ]        !== undefined ) delete _apps[/OpenCart-Journal2/];
-    if( _apps[ 'OpenCart-Journal-Version' ]        !== undefined ) delete _apps[/OpenCart-Journal3/];
+    if( _apps[ 'OpenCart-Journal-Version' ]       !== undefined ) delete _apps[/OpenCart-Journal2/];
+    if( _apps[ 'OpenCart-Journal-Version' ]       !== undefined ) delete _apps[/OpenCart-Journal3/];
     if( _apps[ 'Smartstore-Image' ]               !== undefined ) delete _apps[ 'Smartstore' ];
     if( _apps[ 'Smartstore-Image' ]               !== undefined ) delete _apps[ 'Smartstore-Image' ];                
 }
