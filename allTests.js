@@ -77,11 +77,11 @@ function runAllTests()
                 }
             }
         }
-        if( shop.test_version !== undefined )
-        {
-            var vers = shop.test_version();
-            shop.fullname += " " + vers;
-        }
+//        if( shop.test_version !== undefined )
+//        {
+//            var vers = shop.test_version();
+//            shop.fullname += " " + vers;
+//        }
         if( notFound && ( shop.test_script !== undefined ) )
         {
             // document.writeln( " test_regexp set" );
