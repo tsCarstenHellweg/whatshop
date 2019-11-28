@@ -1,0 +1,29 @@
+#app_list a {
+	margin-right: 4px;
+}
+
+#app_list {
+				background: #fff;
+				color: #000;
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 13px;
+				line-height: 16px;
+				min-width: 300px;
+				width: 10px;
+			}
+img {
+				display: inline-block;
+				height: 16px;
+				margin-right: 8px;
+				vertical-align: top;
+				width: 16px;
+			}
+span {
+				font-weight: bold;
+			}
+.category {
+				color: #999;
+				display: block;
+				margin: 5px 0 0 28px;
+				font-weight: normal;
+			}

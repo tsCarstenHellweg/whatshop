@@ -1,0 +1,1 @@
+this folder exists to hold the old version(0.8.3) of whatshop.
