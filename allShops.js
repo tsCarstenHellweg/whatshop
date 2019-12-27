@@ -244,11 +244,11 @@ function ts_whatshop_getAllShops() {
         cat: 0,
         test_script: function()
         {
-            if( typeof _tsConfig === 'undefined' ) 
+            if( typeof _tsConfig == 'undefined' ) 
             {
                 return false;
             }
-            if( typeof _tsConfig.disableTrustbadge === 'undefined' ) 
+            if( typeof _tsConfig.disableTrustbadge == 'undefined' ) 
             {
                return false;
             }
@@ -263,11 +263,11 @@ function ts_whatshop_getAllShops() {
         cat: 0,
         test_script: function()
         {
-            if( typeof _tsConfig === 'undefined' ) 
+            if( typeof _tsConfig == 'undefined' ) 
             {
                 return false;
             }
-            if( typeof _tsConfig.disableResponsive === 'undefined' ) 
+            if( typeof _tsConfig.disableResponsive == 'undefined' ) 
             {
                 return false;
             }           
@@ -366,6 +366,11 @@ function ts_whatshop_getAllShops() {
         icon: 'logo.png',
         priority: 1,
         cat: 0,
+        /*
+         * @TODO: duplicate entries
+        'TS-Widget': /widgets\.trustedshops\.com\/reviews\/tsSticker\/tsProductStickerSummary\.js/,
+        'TS-Widget': /trustedshops.com\/bewertung\/widget\/widgets\/X/,
+         */
         test_regexp: /widgets\.trustedshops\.com\/reviews\/tsSticker\/tsProductStickerSummary\.js/ && /trustedshops.com\/bewertung\/widget\/widgets\/X/
     },
     'Testimonial':{
@@ -1037,6 +1042,7 @@ function ts_whatshop_getAllShops() {
         cat: 4,
         test_url: /strato/i,
         /*
+         * @TODO: TEST_REGEXP!!!! duplicate entries
         'Strato': /strato(.*)epages/i,
         'Strato': /storeWebRoot|Strato\/GUI/,                
         // */
@@ -1072,6 +1078,11 @@ function ts_whatshop_getAllShops() {
         icon: 'VirtueMart.ico',
         priority: 4,
         cat: 4,
+        /*
+         * @TODO: TEST_REGEXP!!!! duplicate entries
+        'VirtueMart': /<div id=("|')vmMainPage/,
+        'VirtueMart': /virtuemart/,
+         */
         test_regexp: /(<div id=("|')vmMainPage)|(virtuemart)/
     },
     'Websale': {
@@ -1383,12 +1394,13 @@ function ts_whatshop_getAllShops() {
         priority: 3,
         cat: 3,
         /*
+         * @TODO: TEST_REGEXP!!!! duplicate entries
         'Opencart': /[Bb]y\sOpenCart/&&/[Ff]or\sOpenCart/&&/OpenCart/i,
         'OpenCart': /opencart\.com/&&/index\.php\?route=[*]/,
         'Opencart': /catalog\/view\/theme/,
         'OpenCart': /(Powered By <a href=("|')[^>]+OpenCart|route = getURLVar\(("|')route)/i,        
         */
-        test_regexp: (/[Bb]y\sOpenCart/&&/[Ff]or\sOpenCart/&&/OpenCart/i) || (/opencart\.com/&&/index\.php\?route=[*]/) || (/catalog\/view\/theme/) || (/(Powered By <a href=("|')[^>]+OpenCart|route = getURLVar\(("|')route)/i),
+        test_regexp: /(Powered By <a href=("|')[^>]+OpenCart|route = getURLVar\(("|')route)/i,
         test_scripttag: /catalog\/view\/javascript\/common.js/        
     },
     'OpenCart-Version': {
@@ -1513,6 +1525,7 @@ function ts_whatshop_getAllShops() {
         cat: 3,
         test_regexp: /\/ReadySkins\//i
     },
+/*
     'Shop-Application': {
         fullname: 'Shop-Application',
         url: '',
@@ -1524,7 +1537,8 @@ function ts_whatshop_getAllShops() {
         {
             return window.formulaire_dynamique_check !== null;
         }
-    },
+    },       
+// */
     'Shopify': {
         fullname: 'Shopify',
         url: '',
@@ -1718,6 +1732,11 @@ function ts_whatshop_getAllShops() {
         priority: 2,
         cat: 1,
         test_meta_generator: /WordPress\s*(.*)/i,
+        /*
+         * @TODO: duplicate entries
+        'WordPress': /<link rel=("|')stylesheet("|') [^>]+wp-content|includes/i,
+        'WordPress': /(<link rel=("|')stylesheet("|') [^>]+wp-content|<meta name=("|')generator("|') [^>]+WordPress)/i,
+         */
         test_regexp: /(<link rel=("|')stylesheet("|') [^>]+wp-content|includes)|((<link rel=("|')stylesheet("|') [^>]+wp-content|<meta name=("|')generator("|') [^>]+WordPress))/i
     },
     'Wix': {
