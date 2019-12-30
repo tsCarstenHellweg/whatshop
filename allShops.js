@@ -344,7 +344,7 @@ function ts_whatshop_getAllShops() {
             if( typeof _tsRatingConfig !== 'undefined' ) 
             {            
                 var stickerVar = _tsRatingConfig.variant;
-                if( stickerVal !== undefined )
+                if( stickerVar !== undefined )
                 {
                     return stickerVar == "vertical";
                 }
