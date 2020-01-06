@@ -1,37 +1,36 @@
 {
-   "manifest_version": 2,
-
-    "background": {
-    "scripts": ["background.js"],
-	"persistant": false
-	},
-   "content_scripts": [ {
-      "js": [ "main.js" ],
-      "matches": [ "http://*/*", "https://*/*" ],
-	  "exclude_globs": ["*paypal.com/*", "https://inside.trustedshops.com/", "*trustedshops.zendesk.com*", "https://www.trustedshops.com/tsb2b*", "*youtube.com/*", "https://trustedshops.lightning.force.com/*", "https://login.salesforce.com/*", "https://wiki.trustedshops.com/*"],
-	  "run_at": "document_idle"
-   } ],
-   "description": "Whatshop online shop analyzer.",
-   "icons": {
-      "128": "icon128.png",
-      "48": "icon48.png",
-	  "32": "icon32.png",
-      "16": "icon16.png"
-   },
-   "name": "Whatshop",
-   "update_url": "https://clients2.google.com/service/update2/crx",
-   "page_action": {
-      "default_icon": "icon16.png",
-      "default_title": "Click for more details.",
-      "default_popup": "popup.html"
-   },
-   "content_security_policy": "script-src 'self'; object-src 'self'",
-   "web_accessible_resources": [        
+    "manifest_version": 2,
+    "name": "Whatshop",
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "description": "Whatshop online shop analyzer.",
+    "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "32": "icon32.png",
+        "16": "icon16.png"
+    },
+    
+    "homepage_url": "https://github.com/dvidsilva/chrome-ext-sample",
+    "browser_action": {
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html",
+        "default_title": "Click for more details."
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "all_frames": true,
+        "js":      ["content.js"]
+    }],
+    "web_accessible_resources": [        
         "allShops.js",
         "allTests.js",
-        "popup.js",
-        "common.js" 
-   ],
-   "permissions": [ "cookies", "tabs", "http://*/*", "https://*/*" ],
-   "version": "0.8.3.0"
+        "popup.js"
+    ],
+    "permissions": [
+        "activeTab"
+    ],
+    "content_security_policy": "script-src 'self' https://www.gstatic.com/; object-src 'self'",
+    
+    "version": "0.9.0.0"
 }
+

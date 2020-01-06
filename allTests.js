@@ -5,6 +5,9 @@ function regExpHelper( regExp, text )
 
 function runAllTests()
 {
+    var _apps = {};
+    console.log( "runAllTests() called" );
+    
     // ---------- all used variables ---------------------    
     var doc = document.documentElement;   // use this instead of document.
     var url = doc.URL;
@@ -133,10 +136,19 @@ function runAllTests()
     if( _apps[ 'OpenCart-Journal-Version' ]       !== undefined ) delete _apps[/OpenCart-Journal2/];
     if( _apps[ 'OpenCart-Journal-Version' ]       !== undefined ) delete _apps[/OpenCart-Journal3/];
     if( _apps[ 'Smartstore-Image' ]               !== undefined ) delete _apps[ 'Smartstore' ];
-    if( _apps[ 'Smartstore-Image' ]               !== undefined ) delete _apps[ 'Smartstore-Image' ];                
+    if( _apps[ 'Smartstore-Image' ]               !== undefined ) delete _apps[ 'Smartstore-Image' ];   
+    
+    
+    //send immediately back to background page for performance reason
+    var jsonString = JSON.stringify(_apps);
+    //alert(jsonString);
+    var meta = document.getElementById('whatshop_meta');
+    meta.content = jsonString;
+    
+    return _apps;
 }
 
-
+/*
 var _apps = {};
 var url = document.URL;
 var url_test = {
@@ -156,3 +168,4 @@ meta.content = jsonString;
 var done = document.createEvent('Event');
 done.initEvent('ready', true, true);
 meta.dispatchEvent(done);
+// */

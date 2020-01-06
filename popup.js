@@ -1,22 +1,8 @@
-/**
- * Chrome Whatshop
- *
- * Detect shopping cart solution and tools concerning privacy run on current page and send back to background page.
- * Some part of this script was referred from AppSniffer.
- *
- * @author Eberhard Burck <ebbudev@gmail.com>
- * @author Laila Abazzouh <laba.ext+whatshop@gmail.com>
- * @author Bao Nguyen <contact@nqbao.com>
- * @license GPLv3
- **/
+console.log( "javascript from popup.html called" );
 
-//function Whatshop(){
-//var bg = chrome.extension.getBackgroundPage();
-
-chrome.tabs.getSelected(null,function(tab){
-    chrome.extension.sendRequest({msg: "get",tab: tab.id}, function(response){
-        var display = document.getElementById('app_list');
-
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {data: "huhu"}, function(response) {        
+        
         var cats = {
             0: { name: 'Trusted Shops' },
             1: { name: 'CMS' },
@@ -28,14 +14,15 @@ chrome.tabs.getSelected(null,function(tab){
             8: { name: 'Plugin'  }
         };
 
-        var apps = response.apps;
+        var apps = response.data;
+        console.log( apps );
         var html = '';
 
 //        var appinfo = bg.appinfo;
         var count = 0;
 
         
-
+        var display = document.createElement( 'div' );
         for (var appid in apps)
         {
             app = apps[ appid ]; 
@@ -76,6 +63,7 @@ chrome.tabs.getSelected(null,function(tab){
 
             count++;
         }
-    });
+        document.getElementById( "app_list" ).appendChild( display );
+    });        
 });
-//};
+
