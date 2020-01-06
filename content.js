@@ -1851,7 +1851,7 @@ function regExpHelper( regExp, text )
 function runAllTests()
 {
     var _apps = {};
-    console.log( "runAllTests() called" );
+    // console.log( "runAllTests() called" );
     
     // ---------- all used variables ---------------------    
     var doc = document.documentElement;   // use this instead of document.
@@ -1998,9 +1998,9 @@ function runAllTests()
 
 
 chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
-    console.log("something happening from the extension");
+//    console.log("something happening from the extension");
     var data = request.data || {};
-    console.log( "data, received:" + data );
+//    console.log( "data, received:" + data );
     
     var head = document.getElementsByTagName('head')[0];
     var meta = document.createElement('meta');
@@ -2010,7 +2010,7 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
             
 //    data = { 'name': "huhu", 'firstname': "bert" };
     data = runAllTests();
-    console.log( data );
+//    console.log( data );
     
     sendResponse({data: data, success: true});
 });
